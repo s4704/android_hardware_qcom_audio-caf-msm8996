@@ -248,6 +248,14 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_SPLIT_A2DP)),true)
     LOCAL_SRC_FILES += audio_extn/a2dp.c
 endif
 
+ifeq ($(strip $(SNDRV_COMPRESS_SET_NEXT_TRACK_PARAM)),true)
+    LOCAL_CFLAGS += -DSNDRV_COMPRESS_SET_NEXT_TRACK_PARAM
+endif
+
+ifeq ($(strip $(AUDIO_FEATURE_ENABLED_ACDB_RELOAD)), true)
+    LOCAL_CFLAGS += -DENABLED_ACDB_RELOAD
+endif
+
 LOCAL_SHARED_LIBRARIES := \
 	liblog \
 	libcutils \
