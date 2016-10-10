@@ -256,6 +256,10 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_ACDB_RELOAD)), true)
     LOCAL_CFLAGS += -DENABLED_ACDB_RELOAD
 endif
 
+ifeq ($strip $(AUDIO_FEATURE_ENABLED_PLAYBACK_ULL)), true)
+    LOCAL_CFLAGS += -DAUDIO_FEATURE_PLAYBACK_ULL
+endif
+
 LOCAL_SHARED_LIBRARIES := \
 	liblog \
 	libcutils \
